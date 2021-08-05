@@ -15,22 +15,31 @@
 		"SCM Providers"
 	],
 	"activationEvents": [
-		"onCommand:git-quick-patch-add.patch stage"
+		"onCommand:git-patch-stage.patch stage",
+		"onCommand:git-patch-stage.copy relative path"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "git-quick-patch-add.patch stage",
+				"command": "git-patch-stage.patch stage",
 				"title": "patch stage"
+			},
+			{
+				"command": "git-patch-stage.copy relative path",
+				"title": "copy relative path"
 			}
 		],
 		"menus": {
 			"scm/resourceState/context": [
 				{
-					"command": "git-quick-patch-add.patch stage",
-					"group": "quick",
+					"command": "git-patch-stage.patch stage",
+					"group": "patch stage",
 					"when": "scmProvider == git && scmResourceGroup == workingTree"
+				},
+				{
+					"command": "git-patch-stage.copy relative path",
+					"group": "patch stage"
 				}
 			]
 		}

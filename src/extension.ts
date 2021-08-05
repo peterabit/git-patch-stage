@@ -1,24 +1,13 @@
-import { relative } from "path";
 import * as vscode from 'vscode';
+import { copyRelativePath } from './copy-relative-path';
+import { patchStage } from "./patch-stage";
 
 export function activate(context: vscode.ExtensionContext) {
-	let disposable = vscode.commands.registerCommand('git-quick-patch-add.patch stage', (...resourceStates: vscode.SourceControlResourceState[]) => {
-		const workspace = vscode.workspace.workspaceFolders && vscode.workspace.workspaceFolders[0];
-		const resourceState = resourceStates[0];
+	const patchStageCommend = vscode.commands.registerCommand('git-patch-stage.patch stage', patchStage);
+	context.subscriptions.push(patchStageCommend);
 
-		if (resourceState && workspace) {
-			const newTerminal = vscode.window.createTerminal();
-			newTerminal.show();
-			const absFilePath = resourceState.resourceUri.path;
-			const filePath = relative(workspace.uri.path, absFilePath);
-			newTerminal.sendText(`git add -p "${filePath}"`);
-		}
-	});
-
-	context.subscriptions.push(disposable);
+	const copyRelativePathCommend = vscode.commands.registerCommand('git-patch-stage.copy relative path', copyRelativePath);
+	context.subscriptions.push(copyRelativePathCommend);
 }
 
 export function deactivate() {}
-
-
-
