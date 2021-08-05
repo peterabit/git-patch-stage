@@ -1,25 +1,35 @@
 {
 	"name": "git-quick-patch-add",
-	"displayName": "git-quick-patch-add",
-	"description": "use \"git add -p <path>\" commend quickliy on source control panel.",
+	"displayName": "git patch stage",
+	"description": "automatically run `git add -p <path>` easily on source control panel.",
+	"publisher": "peterrabityu",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.58.0"
 	},
 	"categories": [
-		"Other"
+		"SCM Providers"
 	],
 	"activationEvents": [
-		"onCommand:git-quick-patch-add.patch add"
+		"onCommand:git-quick-patch-add.patch stage"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "git-quick-patch-add.patch add",
-				"title": "patch add"
+				"command": "git-quick-patch-add.patch stage",
+				"title": "patch stage"
 			}
-		]
+		],
+		"menus": {
+			"scm/resourceState/context": [
+				{
+					"command": "git-quick-patch-add.patch stage",
+					"group": "quick",
+					"when": "scmProvider == git && scmResourceGroup == workingTree"
+				}
+			]
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run package",
