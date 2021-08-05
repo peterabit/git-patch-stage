@@ -11,7 +11,7 @@ export function activate(context: vscode.ExtensionContext) {
 			newTerminal.show();
 			const absFilePath = resourceState.resourceUri.path;
 			const filePath = relative(workspace.uri.path, absFilePath);
-			newTerminal.sendText(`git add -p ${filePath}`);
+			newTerminal.sendText(`git add -p "${filePath}"`);
 		}
 	});
 
