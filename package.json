@@ -3,7 +3,7 @@
 	"displayName": "git patch stage",
 	"description": "automatically run `git add -p <path>` easily on source control panel.",
 	"publisher": "peterrabityu",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"engines": {
 		"vscode": "^1.58.0"
 	},
