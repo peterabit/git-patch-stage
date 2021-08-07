@@ -1,9 +1,6 @@
 # Change Log
 
-All notable changes to the "git-quick-patch-add" extension will be documented in this file.
+## [Pre-alpha]
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
-## [Unreleased]
-
-- Initial release
+- Added patch stage action to source control
+- Added copy relative path action to source control
