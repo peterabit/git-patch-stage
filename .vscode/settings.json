@@ -15,5 +15,9 @@
     },
     "eslint.validate": [
         "javascript"
+    ],
+    "mocha.files.glob": "src/test/unit/**/*.test.ts",
+    "mocha.requires": [
+        "ts-node/register"
     ]
 }
