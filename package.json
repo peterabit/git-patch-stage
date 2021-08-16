@@ -1,7 +1,7 @@
 {
 	"name": "git-patch-stage",
-	"displayName": "git patch stage",
-	"description": "automatically run `git add -p <path>` easily on source control panel.",
+	"displayName": "Git patch stage",
+	"description": "Run `git add -p <path>` automatically on source control panel.",
 	"publisher": "peterrabityu",
 	"repository": {
 		"type": "git",
@@ -12,7 +12,7 @@
 		"vscode": "^1.58.0"
 	},
 	"categories": [
-		"SCM Providers"
+		"Other"
 	],
 	"activationEvents": [
 		"onCommand:git-patch-stage.patch stage",
